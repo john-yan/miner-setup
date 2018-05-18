@@ -2,7 +2,7 @@
 
 find_index_by_uuid() {
   local uuid=$1
-  local id=$(/bin/grep $uuid /gpu/uuid.txt | awk '{print $2}')
+  local id=$(/bin/grep $uuid /uuid.txt | awk '{print $2}')
   if [[ $id == "" ]] ; then
     echo "id-not-found"
   else
