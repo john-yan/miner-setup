@@ -1,0 +1,16 @@
+
+#
+# Column definition
+# UUID POWER_LIMIT GPU_CLOCK RAM_CLOCK FAN_SPEED
+
+# finished-mem miner1
+GPU-b672a76a-b08d-eb70-688b-c83be35fc69b 75  0   1400 -1
+GPU-59ce3599-e0fc-04c1-f7d7-797d47fc97f7 115 0   1600 -1   # E3
+GPU-848abbbe-04c3-a776-cf22-864a32358a6a 225 0   1700 -1   # 1080 TI
+GPU-388319fb-d0d7-9c52-b9bf-d60543648b0c 75  0   1300 -1   # E6
+GPU-e3b3b783-be51-a7ab-68df-2e81e6f1ae7c 75  0   1300 -1
+GPU-dd7c8fb1-709f-43f0-92e8-ac619039d6e3 75  0   1600 -1   # E5
+GPU-ae1778c0-225c-93f3-f77b-195d6941a448 75  0   1600 -1   # D2
+GPU-9a13d815-728e-d3b0-c284-aa68ee5cfe4d 75  0   1300 -1   # E7
+GPU-1eb51aee-4008-88a1-a99a-b201a8319870 75  0   1500 -1   # D1
+GPU-5615640c-f3ec-4208-b042-48b28696dcd0 75  0   1300 -1
