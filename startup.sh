@@ -10,9 +10,6 @@ if [[ `whoami` != "root" ]] ; then
   exit 0
 fi
 
-# update uuid file
-nvidia-smi --format=csv --query-gpu=uuid,index > /uuid.txt
-
 # oc
 source /oc/oc-base.sh
 setup_all_gpus /oc/oc-config.txt

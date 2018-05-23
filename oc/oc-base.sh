@@ -2,7 +2,7 @@
 
 find_index_by_uuid() {
   local uuid=$1
-  local id=$(/bin/grep $uuid /uuid.txt | awk '{print $2}')
+  local id=$(/bin/grep $uuid /oc/uuid.txt | awk '{print $2}')
   if [[ $id == "" ]] ; then
     echo "id-not-found"
   else
@@ -56,6 +56,9 @@ setup_all_gpus() {
   local pw=
   local gr_offset=
   local mem_offset=
+
+  # update uuid file
+  nvidia-smi --format=csv --query-gpu=uuid,index > /oc/uuid.txt
 
   # enable persistent mode
   nvidia-smi -pm 1
