@@ -25,7 +25,7 @@ MINER_HOME=/home/$MINER_NAME
 
 #su miner1 -c "screen -dmS mine /home/miner1/zec-miner/start2.sh"
 su $MINER_NAME -c "screen -dmS mine $MINER_HOME/claymore-11.6/start.bash"
-su $MINER_NAME -c "screen -S mine -X screen bash $MINER_HOME/gpu-monitor.sh"
+su $MINER_NAME -c "screen -S mine -X screen sudo bash $MINER_HOME/miner-setup/gpu-monitor.sh"
 su $MINER_NAME -c "screen -S mine -X screen sudo $MINER_HOME/OhGodAnETHlargementPill-r2"
 
 exit 0

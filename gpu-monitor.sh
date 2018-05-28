@@ -9,13 +9,17 @@ notify() {
   local SUBJECT="Miner1 failures detected!"
 
   if [[ `whoami` == 'root' ]] ; then
-    SUBJECT="Miner1 failures detected: reboot in 20 mins!"
+    SUBJECT="Miner1 failures detected: reboot in 2 mins!"
   fi 
 
   echo "$TXT" | mail -s "$SUBJECT" john.yan1019@gmail.com
 
   if [[ `whoami` == 'root' ]] ; then
-    sleep 1200 && reboot
+    TIMESTAMP=$(date +%F_%H-%M-%S)
+    DMESG="/home/miner/failures/dmesg-$TIMESTAMP"
+    echo "Save dmesg to $DMESG"
+    dmesg > $DMESG
+    sleep 120 && reboot
   fi 
 }
 
@@ -32,6 +36,7 @@ run_test() {
   fi
 }
 
+echo "I am $(whoami)"
 UPTIME=`cat /proc/uptime | awk '{print $1}'`
 WAIT=`python -c "uptime = int($UPTIME); print(1 if uptime > 90 else 90 - uptime);"`
 
