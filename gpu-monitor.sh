@@ -44,6 +44,9 @@ echo "wait $WAIT secs"
 sleep $WAIT
 echo "start monitoring"
 
+NGPUS=`python -c "print($(cat /oc/uuid.txt | wc -l) - 1)"`
+cat /oc/uuid.txt | mail -s "Miner1 startup with ($NGPUS GPUs)" john.yan1019@gmail.com
+
 while true ;
 do
   run_test
